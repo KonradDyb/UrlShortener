@@ -1,4 +1,6 @@
-﻿namespace UrlShortener.Domain.ValueObjects;
+﻿using UrlShortener.Domain.Exceptions;
+
+namespace UrlShortener.Domain.ValueObjects;
 
 public sealed record ShortUrl
 {
@@ -8,7 +10,7 @@ public sealed record ShortUrl
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new Exception(value);
+            throw new InvalidShortUrlException(value);
         }
         
         Value = value;

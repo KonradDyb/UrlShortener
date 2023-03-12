@@ -10,8 +10,8 @@ public class Url
 
     public Url(UrlId id, OriginalUrl originalUrl, ShortUrl shortUrl)
     {
-        Id = id ?? throw new Exception();
-        OriginalUrl = originalUrl ?? throw new Exception();
-        ShortUrl = shortUrl ?? throw new Exception();
+        Id = id ?? throw new ArgumentNullException(nameof(id));
+        OriginalUrl = originalUrl ?? throw new ArgumentNullException(nameof(originalUrl));
+        ShortUrl = shortUrl ?? throw new ArgumentNullException(nameof(shortUrl));
     }
 } 

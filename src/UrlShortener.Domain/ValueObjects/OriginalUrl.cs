@@ -1,4 +1,6 @@
-﻿namespace UrlShortener.Domain.ValueObjects;
+﻿using UrlShortener.Domain.Exceptions;
+
+namespace UrlShortener.Domain.ValueObjects;
 
 public sealed record OriginalUrl
 {
@@ -6,12 +8,29 @@ public sealed record OriginalUrl
 
     public OriginalUrl(string value)
     {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            throw new Exception(value);
-        }
         
+        ValidateUrl(value);
         Value = value;
+    }
+
+    private void ValidateUrl(string value)
+    {
+        if (Uri.IsWellFormedUriString(value, UriKind.Absolute))
+        {
+            if (Uri.TryCreate(value, UriKind.Absolute, out Uri uriResult))
+            {
+                if (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)
+                {
+                    return;
+                }
+
+                throw new InvalidOriginalUrlSchemeException(value);
+            }
+
+            throw new InvalidOriginalUrlException(value);
+        }
+
+        throw new InvalidOriginalUrlException(value);
     }
 
     public static implicit operator string(OriginalUrl originalUrl)

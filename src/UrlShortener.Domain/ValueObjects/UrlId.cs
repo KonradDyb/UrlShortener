@@ -1,4 +1,6 @@
-﻿namespace UrlShortener.Domain.ValueObjects;
+﻿using UrlShortener.Domain.Exceptions;
+
+namespace UrlShortener.Domain.ValueObjects;
 
 public sealed record UrlId
 {
@@ -8,7 +10,7 @@ public sealed record UrlId
     {
         if (value == Guid.Empty)
         {
-            throw new Exception("Guid is empty");
+            throw new InvalidEntityIdException(value);
         }
 
         Value = value;
