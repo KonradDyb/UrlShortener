@@ -1,9 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model string
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h3>Hi {username}!</h3>
-    <p> Please check <a asp-area="" asp-controller="Home" asp-action="TechTaskDetails">Task Details</a> for more details.</p>
-</div>
+<form method="post" action="@Url.Action("Shorten")">
+    <label for="url">Enter a URL to shorten:</label>
+    <input type="url" name="url" id="url" required>
+    <label for="alias">Enter alias:</label>
+    <input type="alias" name="alias" id="alias" minlength="5" maxlength="15">
+    <button type="submit">Shorten</button>
+
+    @if (!string.IsNullOrEmpty(Model))
+    {
+        <p>Shortened URL: <a href="@Url.Action("Temp", new { shortUrl = Model })">@Model</a></p>
+    }
+</form>

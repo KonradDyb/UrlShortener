@@ -1,0 +1,36 @@
+﻿@model IEnumerable<UrlShortener.Domain.Entities.Url>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="p-3 m-0 border-0">
+<div class="row">
+    @{
+        int counter = 1;
+    }
+    @foreach (var url in Model)
+    {
+        <div class="col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Url @counter.ToString()
+                </div>
+                <div class="card-body">
+                    <p class="card-text">An absolute URL: <a href="@url.OriginalUrl.Value">@url.OriginalUrl.Value</a></p>
+                    <p class="card-text">Shortened URL: <a href="@Url.Action("Temp", new { shortUrl = url.ShortUrl.Value })">@url.ShortUrl.Value</a></p>
+                </div> 
+            </div>
+        </div>
+        counter++;
+    }
+</div>
+</body>
+</html>
