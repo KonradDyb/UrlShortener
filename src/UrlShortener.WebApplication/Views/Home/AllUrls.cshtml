@@ -16,20 +16,27 @@
     @{
         int counter = 1;
     }
-    @foreach (var url in Model)
+    @if (Model.Any())
     {
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-header">
-                    Url @counter.ToString()
+        @foreach (var url in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        Url @counter.ToString()
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">An absolute URL: <a href="@url.OriginalUrl.Value">@url.OriginalUrl.Value</a></p>
+                        <p class="card-text">Shortened URL: <a href="@Url.Action("Temp", new { shortUrl = url.ShortUrl.Value })">@url.ShortUrl.Value</a></p>
+                    </div> 
                 </div>
-                <div class="card-body">
-                    <p class="card-text">An absolute URL: <a href="@url.OriginalUrl.Value">@url.OriginalUrl.Value</a></p>
-                    <p class="card-text">Shortened URL: <a href="@Url.Action("Temp", new { shortUrl = url.ShortUrl.Value })">@url.ShortUrl.Value</a></p>
-                </div> 
             </div>
-        </div>
-        counter++;
+            counter++;
+        }
+    }
+    else
+    {
+        <h4>No urls yet...</h4>
     }
 </div>
 </body>
