@@ -2,14 +2,14 @@
 
 UrlShortener is amazing application thanks to which you will get rid of copying long links in different applications.
 It follows KISS rule to KEEP IT SIMPLE STUPID. You just paste URL then click button 'Shorten' and voila.
-You received shortened link :)
+You received shortened link :) This is the way ! 
 ## How to start?
 `Section description:  What should be done before application start(e.g db migration)`
 ## Key assumptions 
 - MSSQL database can handle a large number of records. 
 - Tech stack can support the need of my service and fast response times.
 - User interface will be intuitive and user-friendly.
-- I will use SeriLog library to provide logs. I will use sink for the file.
+- I will use SeriLog library to provide logs. I will use sink for the MSSQL Server.
 ## Future Ideas
 `Section description:  If you haven't enough time to implement some feature or ideas, please provide them here.`
 
@@ -46,4 +46,4 @@ URL shortening is used to optimize links across devices, track individual links 
 - You may change UI technology to any other you are most familiar with.
 - You can use InMemory data storage.
 - You can use the Internet.
-# May the force be with you {username}!
+# May the force be with you {KonradDyb}!
