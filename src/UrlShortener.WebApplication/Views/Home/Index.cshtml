@@ -4,7 +4,7 @@
     <label for="url">Enter a URL to shorten:</label>
     <input type="url" name="url" id="url" required>
     <label for="alias">Enter alias:</label>
-    <input type="alias" name="alias" id="alias" minlength="5" maxlength="15">
+    <input type="alias" name="alias" id="alias" minlength="8" maxlength="15">
     <button type="submit">Shorten</button>
 
     @if (!string.IsNullOrEmpty(Model))
