@@ -12,6 +12,11 @@ public sealed record ShortUrl
         {
             throw new InvalidShortUrlException(value);
         }
+
+        if (value.Length < 8 && value.Length > 15)
+        {
+            throw new InvalidShortUrlException(value);
+        }
         
         Value = value;
     }
