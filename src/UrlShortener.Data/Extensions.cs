@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using UrlShortener.Data.Exceptions;
 using UrlShortener.Data.Repository;
 using UrlShortener.Domain.Repositories;
 
@@ -16,6 +17,7 @@ public static class Extensions
         });
         
         services.AddScoped<IUrlRepository, UrlRepository>();
+        services.AddSingleton<ExceptionMiddleware>();
 
         return services;
     }
