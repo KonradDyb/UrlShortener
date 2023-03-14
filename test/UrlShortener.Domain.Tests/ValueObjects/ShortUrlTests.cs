@@ -9,7 +9,7 @@ namespace UrlShortener.Domain.Tests.ValueObjects;
 public class ShortUrlTests
 {
     [Theory]
-    [InlineData("abc123")]
+    [InlineData("abc12345")]
     [InlineData("aBc1DeF2")]
     public void should_createshorturl(string value)
     {

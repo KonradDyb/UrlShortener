@@ -16,7 +16,7 @@ public class UrlServiceTests
     {
         // Arrange
         var urlRepository = new Mock<IUrlRepository>();
-        var existingUrl = new Url(UrlId.Create(), new OriginalUrl("http://example.com"), new ShortUrl("abc123"));
+        var existingUrl = new Url(UrlId.Create(), new OriginalUrl("http://example.com"), new ShortUrl("abc12345"));
         urlRepository.Setup(r => r.GetByOriginalUrl(existingUrl.OriginalUrl)).ReturnsAsync(existingUrl);
         var urlService = new UrlService(urlRepository.Object);
 

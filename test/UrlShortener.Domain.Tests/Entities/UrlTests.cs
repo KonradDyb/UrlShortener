@@ -10,7 +10,7 @@ public class UrlTests
 {
     private readonly UrlId _urlId = UrlId.Create();
     private readonly OriginalUrl _originalUrl = new("https://www.example.com");
-    private readonly ShortUrl _shortUrl = new("abc123");
+    private readonly ShortUrl _shortUrl = new("abc12345");
 
     [Fact]
     public void changeurlproperties_should_change_properties_correctly()
@@ -18,7 +18,7 @@ public class UrlTests
         // Arrange
         var url = new Url(_urlId, _originalUrl, _shortUrl);
         var newOriginalUrl = new OriginalUrl("https://www.example.com/new");
-        var newShortUrl = new ShortUrl("def456");
+        var newShortUrl = new ShortUrl("def45678");
 
         // Act
         url.ChangeUrlProperties(newOriginalUrl, newShortUrl);
@@ -35,7 +35,7 @@ public class UrlTests
         var url = new Url(_urlId, _originalUrl, _shortUrl);
 
         // Act & Assert
-        Should.Throw<ArgumentNullException>(() => url.ChangeUrlProperties(null, new ShortUrl("def456")));
+        Should.Throw<ArgumentNullException>(() => url.ChangeUrlProperties(null, new ShortUrl("def45678")));
     }
 
     [Fact]
