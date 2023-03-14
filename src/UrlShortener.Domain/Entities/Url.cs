@@ -14,4 +14,10 @@ public class Url
         OriginalUrl = originalUrl ?? throw new ArgumentNullException(nameof(originalUrl));
         ShortUrl = shortUrl ?? throw new ArgumentNullException(nameof(shortUrl));
     }
+
+    public void ChangeUrlProperties(OriginalUrl originalUrl, ShortUrl shortUrl)
+    {
+        OriginalUrl = originalUrl ?? throw new ArgumentNullException($"{nameof(OriginalUrl)} is null");
+        ShortUrl = shortUrl ?? throw new ArgumentNullException($"{nameof(ShortUrl)} is null");
+    }
 } 
