@@ -1,7 +1,7 @@
 # UrlShortener
 
 UrlShortener is amazing application thanks to which you will get rid of copying long links in different applications.
-It follows KISS rule to KEEP IT SIMPLE STUPID. You just paste URL then click button 'Shorten' and voila.
+It follows KISS rule to keep it simple stupid. You just paste URL then click button 'Shorten' and voila.
 You received shortened link :) This is the way ! 
 ## How to start?
 - Download and install the newest .NET Sdk from this page https://dotnet.microsoft.com/en-us/download/dotnet/6.0
