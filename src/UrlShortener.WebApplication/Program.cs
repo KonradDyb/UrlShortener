@@ -1,8 +1,11 @@
 using UrlShortener.Data;
+using UrlShortener.Domain;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDomain();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
