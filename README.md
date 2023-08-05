@@ -51,15 +51,4 @@ URL shortening is used to optimize links across devices, track individual links 
 ### Non-Functional Requirements:
 - URL redirection should happen in real-time with minimal latency.
 - Please add small project description to Readme.md file.
-### During implementation please pay attention to:
-- Application is runnable out of box. If some setup is needed please provide details on ReadMe file.
-- Project structure and code smells.
-- Design Principles and application testability.
-- Main focus should be on backend functionality, not UI.
-- Input parameter validation.
-- Please, don't use any library or service that implements the core functionality of this test.
-### Other recommendation:
-- You may change UI technology to any other you are most familiar with.
-- You can use InMemory data storage.
-- You can use the Internet.
-# May the force be with you {KonradDyb}!
+
